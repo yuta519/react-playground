@@ -5,10 +5,12 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import App from './App.tsx'
 import './index.css'
 import { Theme, ThemeContext } from './Context';
+import ApiCall from './pages/ApiCall'
 import ContextPage from './pages/ContextPage'
 import CountriesDropdownMenu from './pages/CountriesDropdownMenu'
 import CurrencyConverterPage from './pages/CurrencyConverterPage'
 import CounterWithProps from './pages/CounterWithProps.tsx'
+import InfiniteLoop from './pages/InfiniteLoop.tsx'
 
 const router = createBrowserRouter([
   { path: '/', element: <App/>},
@@ -16,6 +18,9 @@ const router = createBrowserRouter([
   { path: '/countries', element: <CountriesDropdownMenu/> },
   { path: '/counter_with_props', element: <CounterWithProps/> },
   { path: '/context', element: <ContextPage /> },
+  { path: '/call_api', element: <ApiCall /> },
+  { path: '/infinite_loop', element: <InfiniteLoop /> },
+
   { path: '/currency_converter', element: <CurrencyConverterPage /> },
 ])
 
