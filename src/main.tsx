@@ -4,10 +4,12 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import App from './App.tsx'
 import './index.css'
+import CountriesDropdownMenu from './pages/CountriesDropdownMenu'
 
 const router = createBrowserRouter([
   { path: '/', element: <App/>},
   { path: '/test', element: <App/> },
+  { path: '/countries', element: <CountriesDropdownMenu/> },
 ])
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
