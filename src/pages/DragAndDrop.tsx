@@ -1,0 +1,2 @@
+// reference: Intermediate Question 8 https://codeinterview.io/blog/reactjs-coding-interview-questions/
+// Build a simple drag-and-drop interface that allows users to reorder a list of items through drag-and-drop. Implement a visual cue to indicate the new position of the dragged item. Use React state, components and hooks to manage the list’s data and user interactions.
