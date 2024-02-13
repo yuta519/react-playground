@@ -1,3 +1,4 @@
+// Reference: https://www.youtube.com/watch?v=EirBuUUPbio
 import { useState } from 'react';
 
 const countries = [
@@ -6,22 +7,45 @@ const countries = [
   { name: "Bangladesh", value: "BG", cities: ["Dhaka", "Chittagong"] }
 ];
 
-export default function CountriesDropdownMenu() {
-  const [currentCountry, setCurrentCountry] = useState({name: 'Nothing'});
+type State = {
+  name: string;
+  value: string;
+  cities: string[];
+}
 
-  const handleChange = (event: any) => {
+const initialState = {name: '', value: '', cities:[]} 
+
+export default function CountriesDropdownMenu() {
+  const [currentCountry, setCurrentCountry] = useState<State>(initialState);
+
+  const handleChangeCountry = (event: any) => {
     const selectedCountry = countries.find((country)=> country.value === event.target.value);
-    setCurrentCountry(selectedCountry ?? {name: '', value: '', cities:[]} );
+    if (!selectedCountry) return setCurrentCountry(initialState);
+    setCurrentCountry(selectedCountry);
   } 
+  const handleChangeCity = (event: any) => {
+    console.log(event.target.value);
+  }
 
   return (
     <>
-      <select onChange={handleChange}>
+      <select onChange={handleChangeCountry}>
+        <option key='' value=''>---</option>
         { countries.map((country) => (
           <option key={country.value} value={country.value}>{country.name}</option>
         ))}
       </select>
-      <div>{currentCountry.name ?? ''}</div>
+
+      {
+        currentCountry !== initialState && (
+          <select onChange={handleChangeCity}>
+            <option key='' value=''>---</option>
+            { currentCountry.cities.map((city, index) => (
+              <option key={index} value={city}>{city}</option>
+            ))}
+          </select>
+        )
+      }
     </>
   );
 }
