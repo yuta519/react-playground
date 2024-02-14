@@ -10,6 +10,7 @@ import ContextPage from './pages/ContextPage';
 import CountriesDropdownMenu from './pages/CountriesDropdownMenu';
 import CurrencyConverterPage from './pages/CurrencyConverterPage';
 import CounterWithProps from './pages/CounterWithProps.tsx';
+import IncrementWithUseRef from './pages/IncrementWithUseRef';
 import InfiniteLoop from './pages/InfiniteLoop.tsx';
 import Timer from './pages/CountUpBySecond';
 
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
   { path: '/counter_with_props', element: <CounterWithProps/> },
   { path: '/context', element: <ContextPage /> },
   { path: '/call_api', element: <ApiCall /> },
+  { path: '/increment_with_useref', element: <IncrementWithUseRef /> },
   { path: '/infinite_loop', element: <InfiniteLoop /> },
   { path: '/timer', element: <Timer /> },
 
