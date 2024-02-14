@@ -1,6 +1,7 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { CURRENCIES } from '../constants';
+import { FreeCurrencyAPI } from '../infras/FreeCurrencyAPI'
 import { CurrencyExchange } from '../types';
 
 export type CurrencyName = (typeof CURRENCIES)[keyof typeof CURRENCIES];
@@ -43,6 +44,12 @@ const dumydata = {
 
 export default function useCurrency() {
   const [currentExchange, updateCurrentExhange] = useState<CurrencyExchange>(dumydata);
+
+  useEffect(() => {
+    FreeCurrencyAPI.getCurrentCurrencyExchange().then(
+      (response) => response && updateCurrentExhange(response)
+    );
+  },[updateCurrentExhange])
 
   function convert(amount: number, src: CurrencyName, dst: CurrencyName) {
     const ratio = currentExchange[dst] / currentExchange[src];
