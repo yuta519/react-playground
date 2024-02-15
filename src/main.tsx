@@ -12,6 +12,7 @@ import CurrencyConverterPage from './pages/CurrencyConverterPage';
 import CounterWithProps from './pages/CounterWithProps.tsx';
 import IncrementWithUseRef from './pages/IncrementWithUseRef';
 import InfiniteLoop from './pages/InfiniteLoop.tsx';
+import PaginatedList from'./pages/PagenatedList';
 import Stopwatch from './pages/Stopwatch';
 import Timer from './pages/CountUpBySecond';
 
@@ -21,13 +22,13 @@ const router = createBrowserRouter([
   { path: '/countries', element: <CountriesDropdownMenu/> },
   { path: '/counter_with_props', element: <CounterWithProps/> },
   { path: '/context', element: <ContextPage /> },
+  { path: '/currency_converter', element: <CurrencyConverterPage /> },
   { path: '/call_api', element: <ApiCall /> },
   { path: '/increment_with_useref', element: <IncrementWithUseRef /> },
+  { path: '/paginated_list', element: <PaginatedList /> },
   { path: '/infinite_loop', element: <InfiniteLoop /> },
   { path: '/stopwatch', element: <Stopwatch /> },
   { path: '/timer', element: <Timer /> },
-
-  { path: '/currency_converter', element: <CurrencyConverterPage /> },
 ])
 
 const Main = () => {
