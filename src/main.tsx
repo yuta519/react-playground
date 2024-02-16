@@ -1,11 +1,14 @@
-import React, { useState } from 'react'
-import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom/client';
+import { Provider } from "react-redux";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import App from './App.tsx'
-import './index.css'
+import App from './App.tsx';
+import './index.css';
 import { Theme, ThemeContext } from './Context';
+import store from './state/store';
 import ApiCall from './pages/ApiCall';
+import Auth from './pages/AuthWithUseReducer.tsx';
 import ContextPage from './pages/ContextPage';
 import CountriesDropdownMenu from './pages/CountriesDropdownMenu';
 import CurrencyConverterPage from './pages/CurrencyConverterPage';
@@ -17,10 +20,11 @@ import Stopwatch from './pages/Stopwatch';
 import Timer from './pages/CountUpBySecond';
 
 const router = createBrowserRouter([
-  { path: '/', element: <App/>},
-  { path: '/test', element: <App/> },
-  { path: '/countries', element: <CountriesDropdownMenu/> },
-  { path: '/counter_with_props', element: <CounterWithProps/> },
+  { path: '/', element: <App />},
+  { path: '/test', element: <App /> },
+  { path: '/auth', element: <Auth /> },
+  { path: '/countries', element: <CountriesDropdownMenu /> },
+  { path: '/counter_with_props', element: <CounterWithProps /> },
   { path: '/context', element: <ContextPage /> },
   { path: '/currency_converter', element: <CurrencyConverterPage /> },
   { path: '/call_api', element: <ApiCall /> },
@@ -38,7 +42,9 @@ const Main = () => {
   return (
       <ThemeContext.Provider value={themeValue}>
         <React.StrictMode>
-          <RouterProvider router={router} />
+          <Provider store={store}>
+            <RouterProvider router={router} />
+          </Provider>
         </React.StrictMode>
       </ThemeContext.Provider>
   )
