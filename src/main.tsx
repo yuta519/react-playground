@@ -19,6 +19,7 @@ import InfiniteScroll from './pages/InfiniteScroll';
 import PaginatedList from'./pages/PagenatedList';
 import Stopwatch from './pages/Stopwatch';
 import Timer from './pages/CountUpBySecond';
+import ThemePage from './pages/Theme';
 import Weather from './pages/Weather';
 
 const router = createBrowserRouter([
@@ -36,6 +37,7 @@ const router = createBrowserRouter([
   { path: '/infinite_scroll', element: <InfiniteScroll /> },
   { path: '/stopwatch', element: <Stopwatch /> },
   { path: '/timer', element: <Timer /> },
+  { path: '/theme', element: <ThemePage /> },
   { path: '/weather', element: <Weather /> },
 ])
 
