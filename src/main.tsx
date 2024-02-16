@@ -18,6 +18,7 @@ import InfiniteLoop from './pages/InfiniteLoop.tsx';
 import PaginatedList from'./pages/PagenatedList';
 import Stopwatch from './pages/Stopwatch';
 import Timer from './pages/CountUpBySecond';
+import Weather from './pages/Weather';
 
 const router = createBrowserRouter([
   { path: '/', element: <App />},
@@ -33,6 +34,7 @@ const router = createBrowserRouter([
   { path: '/infinite_loop', element: <InfiniteLoop /> },
   { path: '/stopwatch', element: <Stopwatch /> },
   { path: '/timer', element: <Timer /> },
+  { path: '/weather', element: <Weather /> },
 ])
 
 const Main = () => {
