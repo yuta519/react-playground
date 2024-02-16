@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { faker } from '@faker-js/faker';
 
 import { User } from '../types'
@@ -19,6 +20,18 @@ export const useDummyData = () => {
     return [...Array(nums)].map((_) => (createRandomUser()));
   }
 
+  async function fetchQuoteById(id: number) {
+    'use server';
 
-  return { createUsers };
+    const controller = new AbortController(); 
+    const { data }: { data: {id: number, quote: string, author: string}} = await axios.get(
+      `https://dummyjson.com/quotes/${id}`,
+      { signal: controller.signal }
+    );
+    controller.abort()
+    return data;
+  }
+
+
+  return { createUsers, fetchQuoteById };
 }
