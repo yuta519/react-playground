@@ -9,6 +9,7 @@ import { Theme, ThemeContext } from './Context';
 import store from './state/store';
 import ApiCall from './pages/ApiCall';
 import Auth from './pages/AuthWithUseReducer.tsx';
+import CatFriends from './pages/CatFriends';
 import ContextPage from './pages/ContextPage';
 import CountriesDropdownMenu from './pages/CountriesDropdownMenu';
 import CurrencyConverterPage from './pages/CurrencyConverterPage';
@@ -26,6 +27,7 @@ const router = createBrowserRouter([
   { path: '/', element: <App />},
   { path: '/test', element: <App /> },
   { path: '/auth', element: <Auth /> },
+  { path: '/cats', element: <CatFriends /> },
   { path: '/countries', element: <CountriesDropdownMenu /> },
   { path: '/counter_with_props', element: <CounterWithProps /> },
   { path: '/context', element: <ContextPage /> },
