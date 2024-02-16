@@ -15,6 +15,7 @@ import CurrencyConverterPage from './pages/CurrencyConverterPage';
 import CounterWithProps from './pages/CounterWithProps.tsx';
 import IncrementWithUseRef from './pages/IncrementWithUseRef';
 import InfiniteLoop from './pages/InfiniteLoop.tsx';
+import InfiniteScroll from './pages/InfiniteScroll';
 import PaginatedList from'./pages/PagenatedList';
 import Stopwatch from './pages/Stopwatch';
 import Timer from './pages/CountUpBySecond';
@@ -32,6 +33,7 @@ const router = createBrowserRouter([
   { path: '/increment_with_useref', element: <IncrementWithUseRef /> },
   { path: '/paginated_list', element: <PaginatedList /> },
   { path: '/infinite_loop', element: <InfiniteLoop /> },
+  { path: '/infinite_scroll', element: <InfiniteScroll /> },
   { path: '/stopwatch', element: <Stopwatch /> },
   { path: '/timer', element: <Timer /> },
   { path: '/weather', element: <Weather /> },
